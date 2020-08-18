@@ -4,8 +4,13 @@
   box-sizing: border-box;
 }
 
+.none {
+  display: none;
+}
+
 .html {
   font-size: 62.5%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif, Geneva, Tahoma, sans-serif;
 }
 
 .header {
@@ -54,7 +59,7 @@
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
-  background-color: #afaf14;
+  background-color: #ebc20b;
   position: relative;
 }
 .header .avatar span {
@@ -84,6 +89,7 @@
   width: 100%;
   height: 3rem;
   align-items: center;
+  text-align: center;
   justify-content: center;
   background-color: rgba(238, 238, 238, 0.404);
 }
@@ -126,7 +132,7 @@
   color: #444444;
 }
 
-.head > div:hover ::after {
+.head .heads:hover ::after {
   content: "";
   width: 0;
   height: 0;
@@ -166,6 +172,79 @@
   position: absolute;
   display: block;
   z-index: 20;
+}
+
+.avatar-pop {
+  position: absolute;
+  z-index: 1000;
+  background-color: white;
+  min-height: 100vh;
+  width: 300px;
+  top: 4.5rem;
+  right: 1rem;
+  padding: 2rem 1rem;
+  color: #706f6f;
+  box-shadow: 1px 1px 2px #bbbbbb, -1px -1px 2px #bbbbbb;
+  transition: all 1s;
+}
+.avatar-pop__top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.avatar-pop__top .avatar-user h2 {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+.avatar-pop__top .avatar-user h2:hover {
+  color: #3589aa;
+}
+.avatar-pop__top .avatar-user p {
+  font-size: 0.8rem;
+}
+.avatar-pop__bottom {
+  padding: 1rem 0;
+}
+.avatar-pop__bottom h2 {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.avatar-pop__bottom h2:hover {
+  color: #3589aa;
+}
+.avatar-pop ul {
+  list-style: none;
+  border-bottom: 1px solid #a8a8a8;
+  padding: 1rem 0;
+}
+.avatar-pop ul li {
+  line-height: 2rem;
+  font-weight: 200;
+}
+.avatar-pop ul li:hover {
+  color: #3589aa;
+}
+
+.avatar--big {
+  margin-right: 1rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: #ebc20b;
+  position: relative;
+}
+.avatar--big span {
+  font-size: large;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=main.css.map */

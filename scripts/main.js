@@ -70,16 +70,18 @@ const categories = {
     "Music Software",
   ],
 };
-const headElements = document.querySelectorAll(".head div");
+const headElements = document.querySelectorAll(".head > div");
 const headArray = [];
 
 const divPopUp = document.createElement("div");
 const head = document.querySelector(".head");
 
 function RenderHeadPopUp(event) {
+  divPopUp.innerHTML = "";
   for (var headItem of headElements) {
     headArray.push(headItem.textContent);
   }
+  event.target.append(divPopUp);
 
   head.append(divPopUp);
   divPopUp.classList.add("div-pop");
@@ -99,8 +101,9 @@ function RenderHeadPopUp(event) {
 }
 
 function NoHeadPopUp() {
-  divPopUp.classList.remove("visible");
-  divPopUp.innerHTML = "";
+  head.removeChild(divPopUp);
+  // divPopUp.classList.remove("visible");
+  // divPopUp.innerHTML = "";
 }
 
 //RenderHeadPopUp();
@@ -116,6 +119,7 @@ const header = document.querySelector(".header");
 const div = document.createElement("div");
 
 function RenderHeadItem1(event) {
+  div.innerHTML = "";
   let mouseX = event.clientX;
   let mouseY = event.clientY;
 
@@ -159,6 +163,17 @@ function DisableHeadItem1(event) {
 }
 
 for (var headItem of headItem_1) {
-  headItem.addEventListener("mouseover", RenderHeadItem1.bind(this));
+  headItem.addEventListener("mouseover", RenderHeadItem1);
   headItem.addEventListener("mouseout", DisableHeadItem1);
+  // window.addEventListener("mouseover", DisableHeadItem1);
 }
+
+////////////////////////////////////////////////////
+const avatarPop = document.querySelector(".avatar-pop");
+const avatar = document.querySelector(".avatar");
+function RenderAvatarPop() {
+  avatarPop.classList.toggle("none");
+}
+
+avatar.addEventListener("mouseenter", RenderAvatarPop);
+// avatar.addEventListener("mouseleave", RenderAvatarPop);
