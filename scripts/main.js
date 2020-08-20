@@ -113,3 +113,63 @@ for (var element of headElements) {
   element.addEventListener("mouseover", RenderHeadPopUp);
   element.addEventListener("mouseout", NoHeadPopUp);
 }
+
+/////////////////////////////////////////////mycourse and wishlist///////////
+
+const myCourse = [
+  {
+    name: "Javascript - The Complete guide 2020 ",
+    imgUrl: "https://miro.medium.com/max/700/1*LjR0UrFB2a__5h1DWqzstA.png",
+    progress: "80%",
+  },
+  {
+    name: "Ultimate AWS Certified Developer Associate 2020",
+    imgUrl:
+      "https://d1nzzttg89jj6.cloudfront.net/assets/articles/1575354413/klarna-signs-deal-with-aws-1575354413.png",
+    progress: "1%",
+  },
+  {
+    name: "Understanding Typescript - 2020 edition",
+    imgUrl:
+      "https://pantheon.io/sites/default/files/field/image/TypeScriptImage.jpeg",
+    progress: "75%",
+  },
+  {
+    name: "Advanced Css and sass",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/220px-Sass_Logo_Color.svg.png",
+    progress: "100%",
+  },
+];
+
+const myCourseBlock = document.querySelector(".my-course");
+const myCourseContainer = document.querySelector(".my-course__container");
+const myCourseContent = document.querySelector(".course-content");
+function RenderMyCourses() {
+  myCourseContent.innerHTML = "";
+
+  myCourse.forEach((course) => {
+    const courseElement = document.createElement("div");
+    courseElement.className = "course-element";
+
+    courseElement.innerHTML = `
+                            <div>
+                              <img src=${course.imgUrl} alt=${course.name}/>
+                            </div>
+                            <div class="course-desc">
+                              <h2>${course.name} </h2>
+                              <div class ="progress">
+                                <span></span>
+                              </div>
+
+                            </div>
+
+    `;
+
+    myCourseContent.append(courseElement);
+
+    const progressElement = (courseElement.lastElementChild.lastElementChild.childNodes[1].style.width = `${course.progress}`);
+  });
+}
+
+myCourseBlock.addEventListener("mouseenter", RenderMyCourses);
