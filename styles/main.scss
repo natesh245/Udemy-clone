@@ -59,7 +59,17 @@ html {
       }
     }
   }
+
+  .avatar-container {
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // position: relative;
+  }
   .avatar {
+    // align-self: stretch;
+    // z-index: 2000;
     margin-right: 1rem;
     height: 2rem;
     width: 2rem;
@@ -67,10 +77,13 @@ html {
     background-color: rgb(235, 194, 11);
     position: relative;
     span {
+      // padding-top: 2.2rem;
+
       font-size: medium;
       font-weight: bold;
       color: white;
       position: absolute;
+      z-index: 1000;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -91,6 +104,83 @@ html {
   }
 }
 
+.avatar-container .avatar-pop {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  z-index: 1000;
+  background-color: white;
+  min-height: 100vh;
+  width: 300px;
+  top: 5rem;
+  right: 1rem;
+  padding: 2rem 1rem;
+  color: rgb(95, 95, 95);
+  box-shadow: 1px 1px 2px rgb(187, 187, 187), -1px -1px 2px rgb(187, 187, 187);
+  transition: all 5s;
+
+  &__top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .avatar-user {
+      h2 {
+        color: black;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.3rem;
+        &:hover {
+          color: rgb(53, 137, 170);
+        }
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  &__bottom {
+    padding: 1rem 0;
+    h2 {
+      color: black;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+
+      &:hover {
+        color: rgb(53, 137, 170);
+      }
+
+      i {
+        font-size: 2rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    border-bottom: 1px solid rgb(168, 168, 168);
+    padding: 1rem 0;
+    // font-weight: 200;
+    li {
+      line-height: 2rem;
+      // font-weight: 300;
+
+      &:hover {
+        color: rgb(53, 137, 170);
+      }
+    }
+  }
+}
+
+.avatar-container:hover .avatar-pop {
+  display: block;
+  opacity: 1;
+}
+
 .head {
   box-sizing: border-box;
   position: relative;
@@ -101,6 +191,7 @@ html {
   text-align: center;
   justify-content: center;
   background-color: rgba(238, 238, 238, 0.404);
+  // padding-top: 0.8rem;
 
   div {
     margin: 1rem;
@@ -181,74 +272,7 @@ html {
   // margin-left: 0rem;
 }
 
-.avatar-pop {
-  position: absolute;
-  z-index: 1000;
-  background-color: white;
-  min-height: 100vh;
-  width: 300px;
-  top: 4.5rem;
-  right: 1rem;
-  padding: 2rem 1rem;
-  color: rgb(95, 95, 95);
-  box-shadow: 1px 1px 2px rgb(187, 187, 187), -1px -1px 2px rgb(187, 187, 187);
-  transition: all 1s;
-
-  &__top {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    .avatar-user {
-      h2 {
-        color: black;
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 0.3rem;
-        &:hover {
-          color: rgb(53, 137, 170);
-        }
-      }
-
-      p {
-        font-size: 0.8rem;
-      }
-    }
-  }
-
-  &__bottom {
-    padding: 1rem 0;
-    h2 {
-      color: black;
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-
-      &:hover {
-        color: rgb(53, 137, 170);
-      }
-
-      i {
-        font-size: 2rem;
-        margin-left: 1rem;
-      }
-    }
-  }
-
-  ul {
-    list-style: none;
-    border-bottom: 1px solid rgb(168, 168, 168);
-    padding: 1rem 0;
-    li {
-      line-height: 2rem;
-      font-weight: 200;
-
-      &:hover {
-        color: rgb(53, 137, 170);
-      }
-    }
-  }
-}
+//display a menu when hovered over avatar
 
 .avatar--big {
   margin-right: 1rem;
@@ -268,7 +292,7 @@ html {
   }
 }
 
-//header div dropdown
+//header div dropdown hover on divs and displaya a dropdown content
 
 .head-dropdown {
   // position: relative;
@@ -277,6 +301,7 @@ html {
   align-self: stretch;
   text-align: center;
   padding-top: 2.2rem;
+  // vertical-align: middle;
   &__content {
     display: none;
     position: absolute;

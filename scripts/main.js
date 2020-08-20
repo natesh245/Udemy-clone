@@ -112,18 +112,3 @@ for (var element of headElements) {
   element.addEventListener("mouseover", RenderHeadPopUp);
   element.addEventListener("mouseout", NoHeadPopUp);
 }
-
-const headItem_1 = document.querySelectorAll(".header__item--1");
-
-const header = document.querySelector(".header");
-// const div = document.createElement("div");
-
-////////////////////////////////////////////////////
-const avatarPop = document.querySelector(".avatar-pop");
-const avatar = document.querySelector(".avatar");
-function RenderAvatarPop() {
-  avatarPop.classList.toggle("none");
-}
-
-avatar.addEventListener("mouseenter", RenderAvatarPop);
-// avatar.addEventListener("mouseleave", RenderAvatarPop);
