@@ -154,6 +154,85 @@ html {
   opacity: 1;
 }
 
+.cart {
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-pop {
+  display: none;
+  position: absolute;
+  top: 5.5rem;
+  right: 5rem;
+  width: 20rem;
+  min-height: 5.5rem;
+  background-color: white;
+  z-index: 1000;
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: 1px 1px 2px #bbbbbb, -1px -1px 2px #bbbbbb;
+}
+.cart-pop p {
+  color: #5f5f5f;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.cart-pop h3 {
+  color: #3589aa;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.cart-pop h3:hover {
+  color: #2f7997;
+}
+.cart:hover .cart-pop {
+  display: block;
+}
+
+.notifications {
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notifications__pop {
+  display: none;
+  position: absolute;
+  top: 5.5rem;
+  right: 5rem;
+  width: 28rem;
+  min-height: 5.5rem;
+  background-color: white;
+  z-index: 1000;
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: 1px 1px 2px #bbbbbb, -1px -1px 2px #bbbbbb;
+}
+.notifications__pop div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.notifications__pop div h2 {
+  color: black;
+}
+.notifications__pop div h3 {
+  color: #3589aa;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.notifications__pop div h3:hover {
+  color: #2f7997;
+}
+.notifications__pop p {
+  color: #5f5f5f;
+  font-size: 1.2rem;
+}
+.notifications:hover .notifications__pop {
+  display: block;
+}
+
 .head {
   box-sizing: border-box;
   position: relative;

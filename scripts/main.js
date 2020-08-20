@@ -76,6 +76,7 @@ const headArray = [];
 const divPopUp = document.createElement("div");
 const head = document.querySelector(".head");
 
+//renders popup when hovered over the head elements
 function RenderHeadPopUp(event) {
   divPopUp.innerHTML = "";
   for (var headItem of headElements) {
