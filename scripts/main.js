@@ -173,3 +173,85 @@ function RenderMyCourses() {
 }
 
 myCourseBlock.addEventListener("mouseenter", RenderMyCourses);
+
+/////////////wishlist///////////
+
+const wishList = [
+  {
+    name: "Ultimate AWS Certified SysOps Administrator",
+    createdBy:
+      "Stephane Marek | AWS certified Solution Architect and developer",
+    price: "Rs 360",
+    imageUrl:
+      "https://images.youracclaim.com/size/340x340/images/ee0a9da0-1627-4031-a455-8ced6b866cc7/AWS-SysOpAdmin-Associate.png",
+  },
+  {
+    name: "MongoDB- The Complete  Developers Guide 2020",
+    createdBy: "Academind By Maximillian Swarsmuller",
+    price: "Rs 399",
+    imageUrl:
+      "https://www.openlogic.com/sites/openlogic/files/image/2019-07/image-blog-big-data-on-demand-with-mongodb.jpg",
+  },
+  {
+    name: "The Modern GraphQL Bootcamp",
+    createdBy: "Andrew Mead",
+    price: "Rs 360",
+    imageUrl: "https://miro.medium.com/max/480/1*ZvmbMEmtGR15Xj-eb3osXA.png",
+  },
+  {
+    name: "VueJs The Complete Guide",
+    createdBy: "Academind By Maximillian Swarsmuller",
+    price: "Rs 360",
+    imageUrl: "https://hackernoon.com/hn-images/1*ACR0gj0wbx91V_xgURifWg.png",
+  },
+  {
+    name: "Docker Mastery with Kubernetes and Swarm",
+    createdBy: "Bret Fisher, Docker Captain program",
+    price: "Rs 360",
+    imageUrl: "https://miro.medium.com/proxy/1*9hGvYE5jegHm1r_97gH-jQ.png",
+  },
+  {
+    name: "Docker and Kubernetes the complete guide",
+    createdBy: "Stephen Grider",
+    price: "Rs 360",
+    imageUrl: "https://miro.medium.com/max/700/1*y320p_dXJmr5PMGRiXioyw.png",
+  },
+];
+
+const listBlock = document.querySelector(".wish-list");
+const listContainer = document.querySelector(".wish-list__container");
+const listContent = document.querySelector(".list-content");
+function RenderWishList() {
+  listContent.innerHTML = "";
+
+  wishList.forEach((list) => {
+    const listElement = document.createElement("div");
+    listElement.className = "list-element";
+
+    listElement.innerHTML = `
+                       <div>   
+                            <div>
+                              <img src=${list.imageUrl} alt=${list.name}/>
+                            </div>
+                            
+                            <div class="list-desc">
+                              <h2>
+                                ${list.name}
+                              </h2>
+                              <p>${list.createdBy}</p>
+                              <h2 class="price">${list.price} </h2>
+                            </div>
+                        </div>
+                        <div class="list-elementBtn">
+                              <a href="#" >Add to cart</a>
+                        </div>
+
+    `;
+
+    listContent.append(listElement);
+
+    // const progressElement = (courseElement.lastElementChild.lastElementChild.childNodes[1].style.width = `${course.progress}`);
+  });
+}
+
+listBlock.addEventListener("mouseenter", RenderWishList);
