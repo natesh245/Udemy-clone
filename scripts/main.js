@@ -5,7 +5,12 @@ const categories = {
     "Programming Languages",
     "Game Development",
     "Databases",
+    "Software Engineering",
     "Software Testing",
+    "E-Commerce",
+    "Data Science",
+
+    "Development Tools",
   ],
   Business: [
     "Finance",
@@ -14,6 +19,14 @@ const categories = {
     "Management",
     "Sales",
     "Strategy",
+    "Operations",
+    "Project Management",
+    "Business Law",
+    "Data & Analytics",
+    "Home Business",
+    "Human Resources",
+    "Industry ",
+    "Media",
   ],
   "IT & Software": [
     "IT Certification",
@@ -49,6 +62,7 @@ const categories = {
   Marketing: [
     "Digital Marketing",
     "Search Engine Optimization",
+    "Social Media Marketing",
     "Branding",
     "Marketing Fundamentals",
     "Analytics & Automation",
@@ -60,6 +74,11 @@ const categories = {
     "Nutrition",
     "Yoga",
     "Mental Health",
+    "Dieting",
+    "Self Defence",
+    "Safety & Fist Aid",
+    "Dance",
+    "Meditation",
   ],
   Music: [
     "Instruments",
@@ -68,6 +87,26 @@ const categories = {
     "Vocal",
     "Music Techniques",
     "Music Software",
+  ],
+  Photography: [
+    "Digital Photography",
+    "Photography Fundamentals",
+    "Portraits",
+    "Photography Tools",
+    "Commercial Photography",
+    "Video Design",
+  ],
+  "Finance & Accounting": [
+    "Accounting & Bookkeeping",
+    "Compliance",
+    "Cryptocurrency & Blockchain",
+    "Economics",
+    "Finance",
+    "Taxes",
+    "Finance Cert & Exam Prep",
+    "Financial Modeling & Analysis",
+    "Investing & Trading",
+    "Money Management Tools",
   ],
 };
 const headElements = document.querySelectorAll(".head > div");
@@ -79,9 +118,9 @@ const head = document.querySelector(".head");
 //renders popup when hovered over the head elements
 function RenderHeadPopUp(event) {
   divPopUp.innerHTML = "";
-  for (var headItem of headElements) {
-    headArray.push(headItem.textContent);
-  }
+  // for (var headItem of headElements) {
+  //   headArray.push(headItem.textContent);
+  // }
   event.target.append(divPopUp);
 
   head.append(divPopUp);
@@ -93,12 +132,21 @@ function RenderHeadPopUp(event) {
 
   catArr = categories[hoverText];
 
-  catArr.forEach((catEl) => {
-    const popElement = document.createElement("div");
-    popElement.innerHTML = catEl;
-    popElement.style.marginLeft = "30px";
-    divPopUp.append(popElement);
-  });
+  // catArr.forEach((catEl, index) => {
+  //   const popElement = document.createElement("div");
+  //   popElement.innerHTML = catEl;
+  //   popElement.style.marginLeft = "30px";
+  //   divPopUp.append(popElement);
+  // });
+
+  for (let i = 0; i <= 5; i++) {
+    if (catArr[i] !== undefined) {
+      const popElement = document.createElement("div");
+      popElement.innerHTML = catArr[i];
+      popElement.style.marginLeft = "30px";
+      divPopUp.append(popElement);
+    }
+  }
 }
 
 function NoHeadPopUp() {
@@ -255,3 +303,52 @@ function RenderWishList() {
 }
 
 listBlock.addEventListener("mouseenter", RenderWishList);
+
+///Category menu
+
+const categoriesElement = document.querySelector(".category__container");
+function RenderCategories() {
+  categoriesElement.innerHTML = "";
+  // console.log(Object.keys(categories));
+  const categoryKey = Object.keys(categories);
+  const ul = document.createElement("ul");
+  ul.className = "sub-category";
+  categoryKey.forEach((key) => {
+    const li = document.createElement("li");
+    li.className = "category-list";
+    li.innerHTML = `<span>${key}</span> <i class="fa fa-chevron-right" aria-hidden="true"></i>`;
+    categoriesElement.append(li);
+  });
+  categoriesElement.append(ul);
+}
+RenderCategories();
+// categoriesElement.addEventListener("mouseenter", RenderCategories);
+
+//category Submenu
+const liElement = document.querySelectorAll(".category-list");
+const subCategory = document.querySelector(".sub-category");
+function RenderSubCategoryMenu(event) {
+  subCategory.innerHTML = "";
+  // const liElement = document.querySelector(".category-list");
+  const liTextContent = event.target.childNodes[0].textContent;
+  // console.log(liTextContent);
+  console.log(categories[liTextContent]);
+  const subCategoryArray = categories[liTextContent];
+
+  subCategoryArray.forEach((elements) => {
+    const li = document.createElement("li");
+    li.className = "subcategory-list";
+    li.innerHTML = `<span>${elements}</span> <i class="fa fa-chevron-right" aria-hidden="true"></i>`;
+    subCategory.append(li);
+  });
+  const liBegin = document.createElement("li");
+  const liEnd = document.createElement("li");
+  liBegin.innerHTML = `<span>All ${liTextContent}</span> `;
+  liEnd.innerHTML = `<span>Other ${liTextContent}</span> <i class="fa fa-chevron-right" aria-hidden="true"></i>`;
+  subCategory.insertAdjacentElement("afterbegin", liBegin);
+  subCategory.insertAdjacentElement("beforeend", liEnd);
+}
+
+liElement.forEach((li) => {
+  li.addEventListener("mouseenter", RenderSubCategoryMenu);
+});
