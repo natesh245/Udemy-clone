@@ -383,7 +383,7 @@ html {
 }
 .list-element div div img {
   object-fit: cover;
-  width: 90%;
+  width: 100%;
 }
 .list-element div .list-desc {
   width: 70%;
@@ -478,25 +478,63 @@ html {
 }
 
 .head {
-  box-sizing: border-box;
-  position: relative;
+  width: 100%;
+  background-color: rgba(236, 236, 236, 0.24);
+}
+.head__container {
+  width: 70%;
+  height: 4rem;
+  margin: auto;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.head__container .heads {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head__container .heads a {
+  text-decoration: none;
+  color: #5f5f5f;
+}
+.head__container .heads:hover::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid black;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  position: absolute;
+  top: 2.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100000;
+}
+.head__container .head-pop {
+  position: absolute;
+  top: 9rem;
+  left: 0;
   width: 100%;
   height: 4rem;
-  align-items: center;
-  text-align: center;
+  background-color: black;
+  z-index: 10000;
+  display: none;
+}
+.head__container .head-pop .headpop-el {
+  color: white;
+  font-size: 1rem;
+  margin-right: 2rem;
+}
+.head__container .head-pop .headpop-el:hover {
+  color: #2077a0;
+}
+.head__container:hover .head-pop {
+  display: flex;
   justify-content: center;
-  background-color: rgba(238, 238, 238, 0.404);
-}
-.head div {
-  margin: 1rem;
-}
-.head div a {
-  text-decoration: none;
-  color: rgba(37, 37, 37, 0.774);
-}
-.head div a:hover {
-  color: #3f92b3;
+  align-items: center;
 }
 
 .hero-image {
@@ -525,38 +563,6 @@ html {
   font-size: 1.5rem;
   line-height: 2rem;
   color: #444444;
-}
-
-.head .heads:hover ::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid black;
-  position: relative;
-  top: 10px;
-  left: -3rem;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.div-pop {
-  position: absolute;
-  z-index: 5;
-  top: 3rem;
-  color: white;
-  width: 100%;
-  height: 4rem;
-  background-color: black;
-  margin-left: 0rem;
-  display: none;
-}
-
-.visible {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .avatar--big {

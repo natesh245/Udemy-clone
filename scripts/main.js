@@ -109,58 +109,28 @@ const categories = {
     "Money Management Tools",
   ],
 };
-const headElements = document.querySelectorAll(".head > div");
-const headArray = [];
 
-const divPopUp = document.createElement("div");
-const head = document.querySelector(".head");
+//////////////////////////////////////////////////
+const headPop = document.querySelector(".head-pop");
+const headElements = document.querySelectorAll(".heads");
 
-//renders popup when hovered over the head elements
-function RenderHeadPopUp(event) {
-  divPopUp.innerHTML = "";
-  // for (var headItem of headElements) {
-  //   headArray.push(headItem.textContent);
-  // }
-  event.target.append(divPopUp);
-
-  head.append(divPopUp);
-  divPopUp.classList.add("div-pop");
-  divPopUp.classList.add("visible");
-
+function RenderHeadPop(event) {
+  headPop.innerHTML = "";
   const hoverText = event.target.textContent;
-  let catArr;
-
-  catArr = categories[hoverText];
-
-  // catArr.forEach((catEl, index) => {
-  //   const popElement = document.createElement("div");
-  //   popElement.innerHTML = catEl;
-  //   popElement.style.marginLeft = "30px";
-  //   divPopUp.append(popElement);
-  // });
-
+  const subCategory = categories[hoverText];
   for (let i = 0; i <= 5; i++) {
-    if (catArr[i] !== undefined) {
-      const popElement = document.createElement("div");
-      popElement.innerHTML = catArr[i];
-      popElement.style.marginLeft = "30px";
-      divPopUp.append(popElement);
+    if (subCategory[i] !== undefined) {
+      const div = document.createElement("div");
+      div.textContent = subCategory[i];
+      div.className = "headpop-el";
+      headPop.append(div);
     }
   }
 }
 
-function NoHeadPopUp() {
-  head.removeChild(divPopUp);
-  // divPopUp.classList.remove("visible");
-  // divPopUp.innerHTML = "";
-}
-
-//RenderHeadPopUp();
-
-for (var element of headElements) {
-  element.addEventListener("mouseover", RenderHeadPopUp);
-  element.addEventListener("mouseout", NoHeadPopUp);
-}
+headElements.forEach((headElement) => {
+  headElement.addEventListener("mouseenter", RenderHeadPop);
+});
 
 /////////////////////////////////////////////mycourse and wishlist///////////
 
