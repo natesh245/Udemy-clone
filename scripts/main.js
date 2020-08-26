@@ -116,6 +116,7 @@ const headElements = document.querySelectorAll(".heads");
 
 function RenderHeadPop(event) {
   headPop.innerHTML = "";
+
   const hoverText = event.target.textContent;
   const subCategory = categories[hoverText];
   for (let i = 0; i <= 5; i++) {
