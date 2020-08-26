@@ -12,6 +12,16 @@ html {
   font-size: 62.5%;
   font-family: sans-serif;
 }
+@media only screen and (max-width: 810px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 280px) {
+  html {
+    font-size: 40%;
+  }
+}
 
 .header {
   font-size: 1.3rem;
@@ -24,15 +34,51 @@ html {
   overflow: hidden;
   border-bottom: 1px solid rgba(128, 128, 128, 0.774);
 }
-.header .logo {
+.header .ham-burger-menu {
+  display: none;
+  color: black;
+  font-weight: normal;
+}
+@media only screen and (max-width: 810px) {
+  .header .ham-burger-menu {
+    display: block;
+    margin-left: 2rem;
+    font-size: 2.2rem;
+  }
+}
+@media only screen and (max-width: 810px) {
+  .header {
+    height: 6.5rem;
+  }
+}
+@media only screen and (max-width: 810px) {
+  .header .div-logo {
+    position: absolute;
+    top: 10px;
+    left: 40%;
+    transform: translate(-30%, -50%);
+  }
+}
+.header .div-logo .logo {
   margin-left: 2rem;
   height: 3.5rem;
+}
+@media only screen and (max-width: 810px) {
+  .header .div-logo .logo {
+    position: absolute;
+    margin: auto;
+  }
 }
 .header .search {
   width: 40%;
   display: flex;
   align-items: center;
   margin-left: 2rem;
+}
+@media only screen and (max-width: 810px) {
+  .header .search {
+    display: none;
+  }
 }
 .header .search .search__icon {
   margin-right: -4rem;
@@ -56,6 +102,16 @@ html {
 .header .search .search__element:focus {
   outline: none;
 }
+@media only screen and (max-width: 1150px) {
+  .header .search {
+    margin-right: -3px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .header .search {
+    margin-right: -3px;
+  }
+}
 .header .avatar-container {
   align-self: stretch;
   display: flex;
@@ -69,6 +125,11 @@ html {
   border-radius: 50%;
   background-color: #ebc20b;
   position: relative;
+}
+@media only screen and (max-width: 810px) {
+  .header .avatar {
+    display: none;
+  }
 }
 .header .avatar span {
   font-size: medium;
@@ -170,6 +231,11 @@ html {
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 810px) {
+  .cart {
+    display: none;
+  }
+}
 .cart-pop {
   display: none;
   position: absolute;
@@ -205,6 +271,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 810px) {
+  .notifications {
+    display: none;
+  }
 }
 .notifications__pop {
   display: none;
@@ -248,6 +319,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 810px) {
+  .my-course {
+    display: none;
+  }
 }
 .my-course__container {
   display: none;
@@ -333,6 +409,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 810px) {
+  .wish-list {
+    display: none;
+  }
 }
 .wish-list__container {
   display: none;
@@ -442,6 +523,11 @@ html {
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 810px) {
+  .category {
+    display: none;
+  }
+}
 .category__container {
   display: none;
   position: absolute;
@@ -492,6 +578,11 @@ html {
   width: 100%;
   background-color: rgba(236, 236, 236, 0.24);
 }
+@media only screen and (max-width: 810px) {
+  .head {
+    display: none;
+  }
+}
 .head__container {
   width: 70%;
   height: 5rem;
@@ -499,6 +590,16 @@ html {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+@media only screen and (max-width: 1110px) {
+  .head__container {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .head__container {
+    width: 100%;
+  }
 }
 .head__container .heads {
   position: relative;
@@ -550,7 +651,7 @@ html {
 
 .hero-image {
   width: 100%;
-  height: 40rem;
+  height: 30vw;
   background-image: url(../img/cover.jpg);
   background-position: center center;
   background-size: cover;
@@ -558,12 +659,17 @@ html {
 }
 .hero-image .hero-text {
   position: absolute;
-  top: 6rem;
-  left: 5rem;
+  top: 10%;
+  left: 8%;
   width: 30%;
   min-height: 35%;
   background-color: white;
   padding: 2rem;
+}
+@media only screen and (max-width: 810px) {
+  .hero-image .hero-text {
+    display: none;
+  }
 }
 .hero-image .hero-text h2 {
   font-size: 3.5rem;
@@ -599,6 +705,16 @@ html {
   text-align: center;
   display: flex;
   align-items: center;
+}
+@media only screen and (max-width: 1160px) {
+  .head-dropdown .header__item--1 {
+    display: none;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .head-dropdown .header__item--2 {
+    display: none;
+  }
 }
 .head-dropdown__content {
   display: none;
@@ -638,6 +754,59 @@ html {
 }
 .head-dropdown:hover .head-dropdown__content {
   display: block;
+}
+
+.reponsive {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
+  position: absolute;
+  right: 10px;
+  z-index: 20000;
+}
+.reponsive .search-icon {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.reponsive .search-icon .icon {
+  margin-right: -4rem;
+  z-index: 2;
+  width: 3rem;
+  border-radius: 11rem;
+  font-size: 1.5rem;
+}
+.reponsive .search-icon .icon i {
+  color: gray;
+}
+@media only screen and (max-width: 810px) {
+  .reponsive .search-icon .icon {
+    font-size: 2rem;
+  }
+}
+.reponsive .carts-icon {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.reponsive .carts-icon .icon i {
+  color: gray;
+}
+@media only screen and (max-width: 810px) {
+  .reponsive .carts-icon .icon {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 810px) {
+  .reponsive {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 280px) {
+  .reponsive {
+    width: 50px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
