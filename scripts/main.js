@@ -200,39 +200,39 @@ const wishList = [
     name: "Ultimate AWS Certified SysOps Administrator",
     createdBy:
       "Stephane Marek | AWS certified Solution Architect and developer",
-    price: "Rs 360",
+    price: "360",
     imageUrl:
       "https://images.youracclaim.com/size/340x340/images/ee0a9da0-1627-4031-a455-8ced6b866cc7/AWS-SysOpAdmin-Associate.png",
   },
   {
     name: "MongoDB- The Complete  Developers Guide 2020",
     createdBy: "Academind By Maximillian Swarsmuller",
-    price: "Rs 399",
+    price: "399",
     imageUrl:
       "https://www.openlogic.com/sites/openlogic/files/image/2019-07/image-blog-big-data-on-demand-with-mongodb.jpg",
   },
   {
     name: "The Modern GraphQL Bootcamp",
     createdBy: "Andrew Mead",
-    price: "Rs 360",
+    price: "360",
     imageUrl: "https://miro.medium.com/max/480/1*ZvmbMEmtGR15Xj-eb3osXA.png",
   },
   {
     name: "VueJs The Complete Guide",
     createdBy: "Academind By Maximillian Swarsmuller",
-    price: "Rs 360",
+    price: "360",
     imageUrl: "https://hackernoon.com/hn-images/1*ACR0gj0wbx91V_xgURifWg.png",
   },
   {
     name: "Docker Mastery with Kubernetes and Swarm",
     createdBy: "Bret Fisher, Docker Captain program",
-    price: "Rs 360",
+    price: "360",
     imageUrl: "https://miro.medium.com/proxy/1*9hGvYE5jegHm1r_97gH-jQ.png",
   },
   {
     name: "Docker and Kubernetes the complete guide",
     createdBy: "Stephen Grider",
-    price: "Rs 360",
+    price: "360",
     imageUrl: "https://miro.medium.com/max/700/1*y320p_dXJmr5PMGRiXioyw.png",
   },
 ];
@@ -258,7 +258,7 @@ function RenderWishList() {
                                 ${list.name}
                               </h2>
                               <p>${list.createdBy}</p>
-                              <h2 class="price">${list.price} </h2>
+                              <h2 class="price">Rs ${list.price} </h2>
                             </div>
                         </div>
                         <div class="list-elementBtn">
@@ -278,6 +278,7 @@ listBlock.addEventListener("mouseenter", RenderWishList);
 ///Category menu
 
 const categoriesElement = document.querySelector(".category__container");
+
 function RenderCategories() {
   categoriesElement.innerHTML = "";
   // console.log(Object.keys(categories));
@@ -343,6 +344,18 @@ const myCart = [];
 const cartPop = document.querySelector(".cart-pop");
 
 const wishListElement = document.querySelector(".wish-list");
+
+const cartNo = document.querySelector(".cart-no");
+// const cartPop = document.querySelector(".cart-pop");
+const noInCart = document.querySelector(".no-of-items");
+const cartPopTop = document.querySelector(".cart-pop-top");
+const cartPopBottom = document.querySelector(".cart-pop-bottom");
+const emptyCart = document.querySelector(".empty-cart");
+const noemptyCart = document.querySelector(".no-cart-empty");
+
+if (myCart.length === 0) {
+  noemptyCart.style.display = "none";
+}
 wishListElement.addEventListener("mouseenter", () => {
   const listBtns = document.querySelectorAll(".list-elementBtn");
   listBtns.forEach((Btn) => {
@@ -369,20 +382,21 @@ wishListElement.addEventListener("mouseenter", () => {
 
       myCart.push(...courseInCart);
 
-      const cartNo = document.querySelector(".cart-no");
-      const cartPop = document.querySelector(".cart-pop");
-      const noInCart = document.querySelector(".no-of-items");
-      const cartPopTop = document.querySelector(".cart-pop-top");
       if (myCart.length > 0) {
+        noemptyCart.style.display = "block";
+
         noInCart.textContent = myCart.length;
         cartNo.style.display = "flex";
         cartPopTop.innerHTML = "";
 
+        let totalPrice = 0;
         myCart.forEach((el) => {
+          totalPrice += parseInt(el.price);
+          console.log(totalPrice);
           const cartElement = document.createElement("div");
-
+          cartElement.className = "cart-element";
           cartElement.innerHTML = `
-          <div>
+         
                <div>
                  <img src=${el.imageUrl} alt=${el.name}/>
                </div>
@@ -392,97 +406,17 @@ wishListElement.addEventListener("mouseenter", () => {
                    ${el.name}
                  </h2>
                  <p>${el.createdBy}</p>
-                 <h2 class="price">${el.price} </h2>
+                 <h2 class="price">Rs ${el.price} </h2>
                </div>
-           </div>
+           
 
 `;
           cartPopTop.append(cartElement);
         });
-        console.log(myCart, wishList);
-      } else {
-        cartNo.style.display = "none";
+        cartPopBottom.children[0].querySelector(
+          "span"
+        ).textContent = totalPrice;
       }
     }
   });
 });
-
-// const myCart = [];
-// const cartPop = document.querySelector(".cart-pop");
-
-// const wishListElement = document.querySelector(".wish-list");
-// const listBtns = document.querySelectorAll(".list-elementBtn");
-
-// listBtns.forEach((el) => {
-//   el.addEventListener("click", Render);
-// });
-
-// function Render() {
-//   listBtns.forEach((Btn) => {
-//     Btn.addEventListener("click", RenderCart);
-//     function RenderCart(event) {
-//       const listElement = event.target.parentNode.parentNode;
-//       const listDescription = listElement.querySelector(".list-desc");
-
-//       const listHeading = listDescription
-//         .querySelector("h2")
-//         .textContent.trim();
-
-//       const courseInCart = wishList.filter((li) => {
-//         return li.name === listHeading;
-//       });
-//       wishList.forEach((el, index) => {
-//         if (el.name === listHeading) {
-//           wishList.splice(index, 1);
-//           return;
-//         }
-//       });
-
-//       listElement.remove();
-
-//       myCart.push(...courseInCart);
-
-//       const cartNo = document.querySelector(".cart-no");
-//       const cartPop = document.querySelector(".cart-pop");
-//       const noInCart = document.querySelector(".no-of-items");
-//       const cartPopTop = document.querySelector(".cart-pop-top");
-//       if (myCart.length > 0) {
-//         noInCart.textContent = myCart.length;
-//         cartNo.style.display = "flex";
-//         cartPopTop.innerHTML = "";
-//         cartPop.style.paddingRight = "0";
-//         cartPop.style.minHeight = "70vh";
-//         cartPopTop.style.height = "60vh";
-//         cartPopTop.style.overflowY = "scroll";
-//         cartPopTop.style.marginRight = "0";
-//         cartPop.style.width = "30rem";
-
-//         myCart.forEach((el) => {
-//           const cartElement = document.createElement("div");
-//           cartElement.className = "list-element";
-
-//           cartElement.innerHTML = `
-//           <div>
-//                <div>
-//                  <img src=${el.imageUrl} alt=${el.name}/>
-//                </div>
-
-//                <div class="list-desc">
-//                  <h2>
-//                    ${el.name}
-//                  </h2>
-//                  <p>${el.createdBy}</p>
-//                  <h2 class="price">${el.price} </h2>
-//                </div>
-//            </div>
-
-// `;
-//           cartPopTop.append(cartElement);
-//         });
-//         console.log(myCart, wishList);
-//       } else {
-//         cartNo.style.display = "none";
-//       }
-//     }
-//   });
-// }
