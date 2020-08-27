@@ -340,68 +340,6 @@ html {
   opacity: 1;
 }
 
-.cart {
-  @media only screen and (max-width: 810px) {
-    display: none;
-  }
-  align-self: stretch;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .cart-no {
-    position: absolute;
-    top: 2rem;
-    right: 10rem;
-    z-index: 5000;
-    background-color: red;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    span {
-      font-size: 1rem;
-      font-weight: 900;
-      color: white;
-    }
-  }
-
-  &-pop {
-    display: none;
-    position: absolute;
-    top: 8rem;
-    right: 8rem;
-    width: 27rem;
-    min-height: 8rem;
-    background-color: white;
-    z-index: 1000;
-    text-align: center;
-    padding: 1.5rem;
-    box-shadow: 1px 1px 2px rgb(187, 187, 187), -1px -1px 2px rgb(187, 187, 187);
-
-    p {
-      color: rgb(95, 95, 95);
-      margin-bottom: 1.2rem;
-      font-size: 1.6rem;
-    }
-
-    h3 {
-      color: rgb(53, 137, 170);
-      font-size: 1.3rem;
-      font-weight: 900;
-
-      &:hover {
-        color: darken($color: rgb(53, 137, 170), $amount: 5);
-      }
-    }
-  }
-
-  &:hover &-pop {
-    display: block;
-  }
-}
-
 .notifications {
   @media only screen and (max-width: 810px) {
     display: none;
@@ -652,7 +590,7 @@ html {
       }
 
       p {
-        margin-top: 0.5rem;
+        margin-top: 0.2rem;
         font-size: 1.2rem;
         line-height: 1.3rem;
         overflow: hidden;
@@ -660,7 +598,7 @@ html {
 
       .price {
         font-size: 1.4rem;
-        margin-top: 0.2rem;
+        margin-top: 0.1rem;
 
         line-height: 1.3rem;
       }
@@ -682,6 +620,68 @@ html {
       color: rgb(24, 74, 97);
       border: 2px solid rgb(24, 74, 97);
     }
+  }
+}
+
+.cart {
+  @media only screen and (max-width: 810px) {
+    display: none;
+  }
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .cart-no {
+    position: absolute;
+    top: 1.5rem;
+    right: 10rem;
+    z-index: 5000;
+    background-color: red;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 1rem;
+      font-weight: 900;
+      color: white;
+    }
+  }
+
+  &-pop {
+    display: none;
+    position: absolute;
+    top: 8rem;
+    right: 8rem;
+    width: 27rem;
+    height: 8rem;
+    background-color: white;
+    z-index: 10000;
+    text-align: center;
+    padding: 1.5rem;
+    box-shadow: 1px 1px 2px rgb(187, 187, 187), -1px -1px 2px rgb(187, 187, 187);
+
+    p {
+      color: rgb(95, 95, 95);
+      margin-bottom: 1.2rem;
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      color: rgb(53, 137, 170);
+      font-size: 1.3rem;
+      font-weight: 900;
+
+      &:hover {
+        color: darken($color: rgb(53, 137, 170), $amount: 5);
+      }
+    }
+  }
+
+  &:hover &-pop {
+    display: block;
   }
 }
 

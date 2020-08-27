@@ -336,3 +336,153 @@ function RenderSideNav() {
 
 hamBtn.addEventListener("click", RenderSideNav);
 sideNavClose.addEventListener("click", RenderSideNav);
+
+//////Add to cart
+
+const myCart = [];
+const cartPop = document.querySelector(".cart-pop");
+
+const wishListElement = document.querySelector(".wish-list");
+wishListElement.addEventListener("mouseenter", () => {
+  const listBtns = document.querySelectorAll(".list-elementBtn");
+  listBtns.forEach((Btn) => {
+    Btn.addEventListener("click", RenderCart);
+    function RenderCart(event) {
+      const listElement = event.target.parentNode.parentNode;
+      const listDescription = listElement.querySelector(".list-desc");
+
+      const listHeading = listDescription
+        .querySelector("h2")
+        .textContent.trim();
+
+      const courseInCart = wishList.filter((li) => {
+        return li.name === listHeading;
+      });
+      wishList.forEach((el, index) => {
+        if (el.name === listHeading) {
+          wishList.splice(index, 1);
+          return;
+        }
+      });
+
+      listElement.remove();
+
+      myCart.push(...courseInCart);
+
+      const cartNo = document.querySelector(".cart-no");
+      const cartPop = document.querySelector(".cart-pop");
+      const noInCart = document.querySelector(".no-of-items");
+      const cartPopTop = document.querySelector(".cart-pop-top");
+      if (myCart.length > 0) {
+        noInCart.textContent = myCart.length;
+        cartNo.style.display = "flex";
+        cartPopTop.innerHTML = "";
+
+        myCart.forEach((el) => {
+          const cartElement = document.createElement("div");
+
+          cartElement.innerHTML = `
+          <div>
+               <div>
+                 <img src=${el.imageUrl} alt=${el.name}/>
+               </div>
+
+               <div class="list-desc">
+                 <h2>
+                   ${el.name}
+                 </h2>
+                 <p>${el.createdBy}</p>
+                 <h2 class="price">${el.price} </h2>
+               </div>
+           </div>
+
+`;
+          cartPopTop.append(cartElement);
+        });
+        console.log(myCart, wishList);
+      } else {
+        cartNo.style.display = "none";
+      }
+    }
+  });
+});
+
+// const myCart = [];
+// const cartPop = document.querySelector(".cart-pop");
+
+// const wishListElement = document.querySelector(".wish-list");
+// const listBtns = document.querySelectorAll(".list-elementBtn");
+
+// listBtns.forEach((el) => {
+//   el.addEventListener("click", Render);
+// });
+
+// function Render() {
+//   listBtns.forEach((Btn) => {
+//     Btn.addEventListener("click", RenderCart);
+//     function RenderCart(event) {
+//       const listElement = event.target.parentNode.parentNode;
+//       const listDescription = listElement.querySelector(".list-desc");
+
+//       const listHeading = listDescription
+//         .querySelector("h2")
+//         .textContent.trim();
+
+//       const courseInCart = wishList.filter((li) => {
+//         return li.name === listHeading;
+//       });
+//       wishList.forEach((el, index) => {
+//         if (el.name === listHeading) {
+//           wishList.splice(index, 1);
+//           return;
+//         }
+//       });
+
+//       listElement.remove();
+
+//       myCart.push(...courseInCart);
+
+//       const cartNo = document.querySelector(".cart-no");
+//       const cartPop = document.querySelector(".cart-pop");
+//       const noInCart = document.querySelector(".no-of-items");
+//       const cartPopTop = document.querySelector(".cart-pop-top");
+//       if (myCart.length > 0) {
+//         noInCart.textContent = myCart.length;
+//         cartNo.style.display = "flex";
+//         cartPopTop.innerHTML = "";
+//         cartPop.style.paddingRight = "0";
+//         cartPop.style.minHeight = "70vh";
+//         cartPopTop.style.height = "60vh";
+//         cartPopTop.style.overflowY = "scroll";
+//         cartPopTop.style.marginRight = "0";
+//         cartPop.style.width = "30rem";
+
+//         myCart.forEach((el) => {
+//           const cartElement = document.createElement("div");
+//           cartElement.className = "list-element";
+
+//           cartElement.innerHTML = `
+//           <div>
+//                <div>
+//                  <img src=${el.imageUrl} alt=${el.name}/>
+//                </div>
+
+//                <div class="list-desc">
+//                  <h2>
+//                    ${el.name}
+//                  </h2>
+//                  <p>${el.createdBy}</p>
+//                  <h2 class="price">${el.price} </h2>
+//                </div>
+//            </div>
+
+// `;
+//           cartPopTop.append(cartElement);
+//         });
+//         console.log(myCart, wishList);
+//       } else {
+//         cartNo.style.display = "none";
+//       }
+//     }
+//   });
+// }
