@@ -255,9 +255,19 @@ function RenderWishList() {
                             
                             <div class="list-desc">
                               <h2>
-                                ${list.name}
+                                ${
+                                  list.name.length > 40
+                                    ? list.name.substring(0, 38).concat("....")
+                                    : list.name
+                                }
                               </h2>
-                              <p>${list.createdBy}</p>
+                              <p>${
+                                list.createdBy.length > 20
+                                  ? list.createdBy
+                                      .substring(0, 25)
+                                      .concat("....")
+                                  : list.createdBy
+                              }</p>
                               <h2 class="price">Rs ${list.price} </h2>
                             </div>
                         </div>
@@ -369,10 +379,10 @@ wishListElement.addEventListener("mouseenter", () => {
         .textContent.trim();
 
       const courseInCart = wishList.filter((li) => {
-        return li.name === listHeading;
+        return li.name.substring(0, 30) === listHeading.substring(0, 30);
       });
       wishList.forEach((el, index) => {
-        if (el.name === listHeading) {
+        if (el.name.substring(0, 30) === listHeading.substring(0, 30)) {
           wishList.splice(index, 1);
           return;
         }
@@ -403,9 +413,17 @@ wishListElement.addEventListener("mouseenter", () => {
 
                <div class="list-desc">
                  <h2>
-                   ${el.name}
+                   ${
+                     el.name.length > 40
+                       ? el.name.substring(0, 31).concat("....")
+                       : el.name
+                   }
                  </h2>
-                 <p>${el.createdBy}</p>
+                 <p>${
+                   el.createdBy.length > 20
+                     ? el.createdBy.substring(0, 21).concat("...")
+                     : el.createdBy
+                 }</p>
                  <h2 class="price">Rs ${el.price} </h2>
                </div>
            

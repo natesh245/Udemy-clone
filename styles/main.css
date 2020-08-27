@@ -539,19 +539,20 @@ html {
   display: flex;
   flex-direction: column;
   text-align: left;
-  justify-self: flex-start;
+  justify-content: center;
+  align-items: start;
 }
 .list-element div .list-desc h2 {
   width: 100%;
   line-height: 1.5rem;
-  overflow: hidden;
   font-size: 1.3rem;
+  margin-bottom: 0.5rem;
 }
 .list-element div .list-desc p {
   margin-top: 0.2rem;
   font-size: 1.2rem;
   line-height: 1.3rem;
-  overflow: hidden;
+  margin-bottom: 0.5rem;
 }
 .list-element div .list-desc .price {
   font-size: 1.4rem;
@@ -881,7 +882,7 @@ html {
 }
 
 .no-cart-empty {
-  width: 27rem;
+  width: 30rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -909,20 +910,19 @@ html {
 .no-cart-empty .cart-pop-top .cart-element div {
   display: flex;
   justify-content: start;
-  align-items: center;
   flex-direction: column;
   text-align: left;
 }
 .no-cart-empty .cart-pop-top .cart-element div h2 {
   font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 .no-cart-empty .cart-pop-top .cart-element div p {
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 .no-cart-empty .cart-pop-top .cart-element div .price {
   font-size: 1.5rem;
-  margin-left: -10rem;
-  margin-top: -1rem;
 }
 .no-cart-empty .cart-pop-bottom {
   width: 100%;
