@@ -323,3 +323,16 @@ function RenderSubCategoryMenu(event) {
 liElement.forEach((li) => {
   li.addEventListener("mouseenter", RenderSubCategoryMenu);
 });
+
+//////////////
+const hamBtn = document.querySelector(".ham-burger-menu__logo ");
+
+const sideNav = document.querySelector(".overlay");
+const sideNavClose = document.querySelector(".side-nav-close");
+
+function RenderSideNav() {
+  sideNav.classList.toggle("none");
+}
+
+hamBtn.addEventListener("click", RenderSideNav);
+sideNavClose.addEventListener("click", RenderSideNav);

@@ -23,6 +23,91 @@ html {
   }
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.678);
+  z-index: 25000;
+  transition: all 2s;
+}
+.overlay .side-nav {
+  width: 35rem;
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  padding: 2.2rem;
+  opacity: 1;
+}
+.overlay .side-nav__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.overlay .side-nav__top .avatar {
+  width: 7rem;
+  height: 7rem;
+  background-color: #ebc20b;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay .side-nav__top .avatar span {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.overlay .side-nav__top .side-nav-user h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+.overlay .side-nav__top .side-nav-user p {
+  font-size: 1.8rem;
+  color: gray;
+}
+.overlay .side-nav ul {
+  list-style: none;
+  margin: 2rem 0;
+  padding-bottom: 2rem;
+}
+.overlay .side-nav ul:not(:last-child) {
+  border-bottom: 2px solid gray;
+}
+.overlay .side-nav ul li {
+  line-height: 5rem;
+  color: gray;
+  font-size: 2rem;
+}
+.overlay .side-nav ul li:first-child {
+  color: gray;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+.overlay .side-nav-close {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 3%;
+  left: 38rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay .side-nav-close span {
+  font-size: 3rem;
+  font-weight: normal;
+  color: grey;
+}
+
 .header {
   font-size: 1.3rem;
   width: 100%;
@@ -235,6 +320,24 @@ html {
   .cart {
     display: none;
   }
+}
+.cart .cart-no {
+  position: absolute;
+  top: 2rem;
+  right: 10rem;
+  z-index: 5000;
+  background-color: red;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.cart .cart-no span {
+  font-size: 1rem;
+  font-weight: 900;
+  color: white;
 }
 .cart-pop {
   display: none;
@@ -535,7 +638,7 @@ html {
   left: 5rem;
   width: 25rem;
   padding: 1.2rem;
-  height: 110vh;
+  min-height: 100vh;
   background-color: white;
   z-index: 5000;
   text-align: left;
@@ -550,7 +653,7 @@ html {
   left: 25rem;
   width: 25rem;
   padding: 1.2rem;
-  height: 110vh;
+  min-height: 100vh;
   background-color: white;
   z-index: 5000;
   text-align: left;
