@@ -521,3 +521,24 @@ RenderLearningCourse();
 
 const leftSpan = document.querySelector("span.left");
 const RightSpan = document.querySelector("span.right");
+
+function ArrowClickHandler(event) {
+  console.log();
+  if (
+    event.target.classList.contains("fa-chevron-left") ||
+    event.target.classList.contains("left")
+  ) {
+    console.log("left");
+    learningContainer.style.left = "0";
+    leftSpan.style.display = "none";
+    RightSpan.style.display = "flex";
+  } else {
+    console.log("right");
+    learningContainer.style.left = "-870px";
+    leftSpan.style.display = "flex";
+    RightSpan.style.display = "none";
+  }
+}
+
+leftSpan.addEventListener("click", ArrowClickHandler);
+RightSpan.addEventListener("click", ArrowClickHandler);

@@ -1099,7 +1099,7 @@ html {
 
   span.left {
     left: 0.3%;
-    // display: none;
+    display: none;
   }
 
   span.right {
@@ -1141,6 +1141,7 @@ html {
       display: flex;
       top: 0;
       left: 0;
+      transition: all 0.8s ease-out;
 
       .course {
         width: 415px;
