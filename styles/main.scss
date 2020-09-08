@@ -80,6 +80,15 @@ html {
       margin: 2rem 0;
       padding-bottom: 2rem;
 
+      &:nth-of-type(2n) {
+        li {
+          display: flex;
+
+          justify-content: space-between;
+          align-items: start;
+        }
+      }
+
       &:not(:last-child) {
         border-bottom: 2px solid gray;
       }
@@ -1052,6 +1061,125 @@ html {
         &:hover {
           background-color: rgb(10, 66, 92);
           color: white;
+        }
+      }
+    }
+  }
+}
+
+/////////learning
+
+.learning {
+  width: 100%;
+  padding: 6rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  position: relative;
+
+  span.arrow {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100px;
+    color: rgb(24, 100, 136);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1),
+      -2px -2px 2px 2px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 55%;
+    background-color: white;
+    transform: translateY(-50%);
+    z-index: 15;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  span.left {
+    left: 0.3%;
+    // display: none;
+  }
+
+  span.right {
+    right: 0.2%;
+  }
+
+  &__heading {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    p {
+      color: rgb(24, 100, 136);
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    margin-top: 2rem;
+    height: 16rem;
+    overflow: hidden;
+
+    // border: 1px solid black;
+
+    position: relative;
+    z-index: 5;
+
+    .course-container {
+      position: absolute;
+      min-width: 100%;
+      height: inherit;
+      display: flex;
+      top: 0;
+      left: 0;
+
+      .course {
+        width: 415px;
+        background-color: white;
+        height: inherit;
+        margin-right: 2rem;
+        border: 1px solid rgba(128, 128, 128, 0.562);
+        border-radius: 10px;
+        display: flex;
+
+        &__image {
+          width: 30%;
+          object-fit: cover;
+          object-position: center;
+          position: relative;
+        }
+
+        &__desc {
+          padding: 1rem;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          h3 {
+            font-size: 1.7rem;
+          }
+          p {
+            padding: 1rem 0;
+            font-size: 1.2rem;
+            color: gray;
+          }
+          p.bottom {
+            // justify-self: flex-end;
+            margin-top: 6rem;
+            .duration {
+              color: gray;
+
+              font-size: 1.2rem;
+            }
+          }
         }
       }
     }

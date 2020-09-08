@@ -77,6 +77,11 @@ html {
   margin: 2rem 0;
   padding-bottom: 2rem;
 }
+.overlay .side-nav ul:nth-of-type(2n) li {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
 .overlay .side-nav ul:not(:last-child) {
   border-bottom: 2px solid gray;
 }
@@ -953,6 +958,105 @@ html {
 .no-cart-empty .cart-pop-bottom div a:hover {
   background-color: #0a425c;
   color: white;
+}
+
+.learning {
+  width: 100%;
+  padding: 6rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  position: relative;
+}
+.learning span.arrow {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100px;
+  color: #186488;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1), -2px -2px 2px 2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 55%;
+  background-color: white;
+  transform: translateY(-50%);
+  z-index: 15;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.learning span.left {
+  left: 0.3%;
+}
+.learning span.right {
+  right: 0.2%;
+}
+.learning__heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.learning__heading h2 {
+  font-size: 3rem;
+}
+.learning__heading p {
+  color: #186488;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.learning__container {
+  width: 100%;
+  margin-top: 2rem;
+  height: 16rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+.learning__container .course-container {
+  position: absolute;
+  min-width: 100%;
+  height: inherit;
+  display: flex;
+  top: 0;
+  left: 0;
+}
+.learning__container .course-container .course {
+  width: 415px;
+  background-color: white;
+  height: inherit;
+  margin-right: 2rem;
+  border: 1px solid rgba(128, 128, 128, 0.562);
+  border-radius: 10px;
+  display: flex;
+}
+.learning__container .course-container .course__image {
+  width: 30%;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+}
+.learning__container .course-container .course__desc {
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.learning__container .course-container .course__desc h3 {
+  font-size: 1.7rem;
+}
+.learning__container .course-container .course__desc p {
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  color: gray;
+}
+.learning__container .course-container .course__desc p.bottom {
+  margin-top: 6rem;
+}
+.learning__container .course-container .course__desc p.bottom .duration {
+  color: gray;
+  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=main.css.map */
