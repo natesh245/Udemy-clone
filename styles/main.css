@@ -988,6 +988,7 @@ html {
 }
 .learning span.left {
   left: 0.3%;
+  display: none;
 }
 .learning span.right {
   right: 0.2%;

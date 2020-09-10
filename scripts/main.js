@@ -551,13 +551,23 @@ function ArrowClickHandler(event) {
     // console.log("left");
     learningContainer.style.left = "0";
     scrollLeft = scrollLeft == 0 ? 0 : scrollLeft + 870;
+    if (scrollLeft == 0) {
+      leftSpan.style.display = "none";
+      RightSpan.style.display = "flex";
+    }
     learningContainer.style.left = `${scrollLeft}px`;
   } else {
+    console.log(scrollLeft);
     // console.log("right");
     // learningContainer.style.left = "-870px";
     scrollLeft = scrollLeft <= -width + 870 * 2 ? 0 : scrollLeft - 870;
     learningContainer.style.left = `${scrollLeft}px`;
-    // leftSpan.style.display = "flex";
+    if (scrollLeft < 0) {
+      leftSpan.style.display = "flex";
+    }
+    if (scrollLeft === -1740) {
+      RightSpan.style.display = "none";
+    }
   }
 }
 
