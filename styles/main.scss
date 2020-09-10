@@ -1086,9 +1086,9 @@ html {
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1),
       -2px -2px 2px 2px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 55%;
+    top: 60%;
     background-color: white;
-    transform: translateY(-50%);
+    transform: translateY(-60%);
     z-index: 15;
     font-size: 2rem;
     font-weight: bold;
@@ -1099,7 +1099,7 @@ html {
 
   span.left {
     left: 0.3%;
-    display: none;
+    // display: none;
   }
 
   span.right {
@@ -1127,24 +1127,32 @@ html {
     width: 100%;
     margin-top: 2rem;
     height: 16rem;
-    overflow: hidden;
+    // overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
 
     // border: 1px solid black;
 
     position: relative;
     z-index: 5;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     .course-container {
       position: absolute;
       min-width: 100%;
+      // max-width: 200vh;
       height: inherit;
       display: flex;
       top: 0;
       left: 0;
-      transition: all 0.8s ease-out;
+      transition: all 0.5s ease-out;
 
       .course {
         width: 415px;
+        // width: 72vh;
         background-color: white;
         height: inherit;
         margin-right: 2rem;
@@ -1157,6 +1165,8 @@ html {
           object-fit: cover;
           object-position: center;
           position: relative;
+          filter: brightness(50%);
+          border-radius: 5px;
         }
 
         &__desc {
@@ -1184,5 +1194,75 @@ html {
         }
       }
     }
+  }
+}
+
+.banner-container {
+  background: url(https://udemy-images.udemy.com/browse_components/shared-assets/purple-intersect.svg)
+    repeat-x #003640;
+  // padding: 2rem;
+  min-height: 9rem;
+  width: 95%;
+  margin: 2rem auto;
+
+  overflow: hidden;
+  background-position: center;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+
+  h2 {
+    color: white;
+
+    span {
+      font-weight: 100;
+    }
+  }
+
+  div {
+    @media (max-width: 940px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      background-color: rgb(24, 100, 136);
+      padding: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-right: 1rem;
+      border-radius: 5px;
+      @media (max-width: 940px) {
+        margin: 2rem 0;
+        align-self: stretch;
+        text-align: center;
+      }
+    }
+
+    button {
+      color: white;
+      background-color: transparent;
+      padding: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border: 2px solid white;
+      border-radius: 5px;
+
+      @media (max-width: 940px) {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 940px) {
+    flex-direction: column;
+    // width: 100%;
+    // justify-content: stretch;
+    // align-items: space-between;
   }
 }
