@@ -571,5 +571,33 @@ function ArrowClickHandler(event) {
   }
 }
 
-leftSpan.addEventListener("click", ArrowClickHandler);
-RightSpan.addEventListener("click", ArrowClickHandler);
+function learningCarousel(event) {
+  const learnContainer = document.querySelector(".learning__container");
+  const courseContainer = document.querySelector(".course-container");
+  const course = document.querySelector(".course");
+
+  const courseWidth = (course.offsetWidth + 20) * 2;
+
+  if (
+    event.target.classList.contains("fa-chevron-left") ||
+    event.target.classList.contains("left")
+  ) {
+    learnContainer.scrollLeft -= courseWidth;
+
+    if (learnContainer.scrollLeft <= courseWidth) {
+      leftSpan.style.display = "none";
+    }
+    RightSpan.style.display = "flex";
+  } else {
+    learnContainer.scrollLeft += courseWidth;
+
+    leftSpan.style.display = "flex";
+
+    if (learnContainer.scrollLeft >= course.offsetWidth) {
+      RightSpan.style.display = "none";
+    }
+  }
+}
+
+leftSpan.addEventListener("click", learningCarousel);
+RightSpan.addEventListener("click", learningCarousel);

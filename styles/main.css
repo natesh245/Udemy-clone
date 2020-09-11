@@ -991,7 +991,7 @@ html {
   display: none;
 }
 .learning span.right {
-  right: 0.2%;
+  right: 0.3%;
 }
 .learning__heading {
   width: 100%;
@@ -1008,6 +1008,7 @@ html {
   font-size: 1.5rem;
 }
 .learning__container {
+  scroll-behavior: smooth;
   width: 100%;
   margin-top: 2rem;
   height: 16rem;
@@ -1032,10 +1033,12 @@ html {
   width: 415px;
   background-color: white;
   height: inherit;
-  margin-right: 2rem;
   border: 1px solid rgba(128, 128, 128, 0.562);
   border-radius: 10px;
   display: flex;
+}
+.learning__container .course-container .course:not(:last-child) {
+  margin-right: 2rem;
 }
 .learning__container .course-container .course__image {
   width: 30%;

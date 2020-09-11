@@ -1103,7 +1103,7 @@ html {
   }
 
   span.right {
-    right: 0.2%;
+    right: 0.3%;
   }
 
   &__heading {
@@ -1124,6 +1124,8 @@ html {
   }
 
   &__container {
+    scroll-behavior: smooth;
+
     width: 100%;
     margin-top: 2rem;
     height: 16rem;
@@ -1155,10 +1157,14 @@ html {
         // width: 72vh;
         background-color: white;
         height: inherit;
-        margin-right: 2rem;
+
         border: 1px solid rgba(128, 128, 128, 0.562);
         border-radius: 10px;
         display: flex;
+
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
 
         &__image {
           width: 30%;
