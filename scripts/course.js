@@ -13,7 +13,11 @@ class CourseCard extends HTMLElement {
                     <div class="image-wrapper">
                       <img src=${imageUrl} alt=${courseHeading}/>
                     </div>
-                      <h2>${courseHeading}</h2>
+                      <h2>${
+                        courseHeading.length > 59
+                          ? courseHeading.substring(0, 56).concat("...")
+                          : courseHeading
+                      }</h2>
                       <p>${
                         courseCreater.length > 35
                           ? courseCreater.substring(0, 38).concat("...")
@@ -45,9 +49,7 @@ class CourseCard extends HTMLElement {
                       heght:135px;
                       object-fit: cover;
                       position:absolute;
-                      top:-1rem;
-                   
-                     
+                      top:10px;
                     }
 
                     h2{
