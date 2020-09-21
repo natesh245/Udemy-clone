@@ -1133,4 +1133,24 @@ html {
   }
 }
 
+.trending-container {
+  width: 93vw;
+  margin: auto;
+}
+
+.heading {
+  color: rgba(0, 0, 0, 0.753);
+  margin: 2rem 0;
+}
+
+.heading--1 {
+  margin-top: 6rem;
+  font-size: 3rem;
+}
+
+.heading--2 {
+  font-size: 2.2rem;
+  margin-bottom: 0;
+}
+
 /*# sourceMappingURL=main.css.map */

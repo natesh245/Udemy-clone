@@ -601,3 +601,5 @@ function learningCarousel(event) {
 
 leftSpan.addEventListener("click", learningCarousel);
 RightSpan.addEventListener("click", learningCarousel);
+
+////Course Carousel
