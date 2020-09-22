@@ -723,3 +723,7 @@ function RenderCourseCarousel(courseArray, container) {
 }
 
 RenderCourseCarousel(courses1, document.querySelector(".trending-container"));
+RenderCourseCarousel(
+  courses1.reverse(),
+  document.querySelector(".recommend-container")
+);

@@ -106,7 +106,7 @@ class CourseCarousel extends HTMLElement {
       const carouselContainer = shadow.querySelector(".carousel-container");
       const carouselWidth = carouselContainer.offsetWidth;
       const courseCard = shadow.querySelector("course-card");
-      const courseWidth = carouselWidth - courseCard.offsetWidth - 20;
+      const courseWidth = carouselWidth - courseCard.offsetWidth - 15;
       console.log(event.target.classList);
 
       if (
