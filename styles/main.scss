@@ -1293,3 +1293,119 @@ html {
   font-size: 2.2rem;
   margin-bottom: 0;
 }
+
+.footer {
+  margin: 5rem 0 0;
+
+  section {
+    &:first-child {
+      border-top: 1px solid rgba(0, 0, 0, 0.575);
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.575);
+    }
+
+    padding: 3rem;
+  }
+
+  &__top {
+    @media (max-width: 1020px) {
+      flex-direction: column;
+      align-items: start;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &--left {
+      display: flex;
+      flex-direction: column;
+      h3 {
+        font-size: 1.9rem;
+        line-height: 4rem;
+      }
+      p {
+        font-size: 1.5rem;
+        @media (max-width: 1020px) {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+    &--right {
+      text-decoration: none;
+      color: white;
+      padding: 1.3rem;
+      border-radius: 5px;
+      background-color: rgb(24, 100, 136);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+
+  &__middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 1164px) {
+      flex-direction: column;
+      align-items: start;
+    }
+    &--left {
+      h3 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+
+        span {
+          color: rgb(24, 100, 136);
+        }
+      }
+      @media (max-width: 1164px) {
+        margin-bottom: 2rem;
+      }
+    }
+    &--right {
+      display: flex;
+      img {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+  &__bottom {
+    @media (max-width: 1050px) {
+      flex-direction: column-reverse;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    ul {
+      list-style: none;
+      li {
+        color: rgb(24, 100, 136);
+        padding: 1rem 1rem 0;
+        font-size: 1.5rem;
+      }
+    }
+
+    div {
+      width: 15em;
+      padding: 1rem 4rem;
+      font-size: 1.2rem;
+      border: 1px solid rgba(0, 0, 0, 0.568);
+      border-radius: 5px;
+      color: rgba(0, 0, 0, 0.568);
+      text-align: left;
+    }
+  }
+}
+
+.copyright-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 5rem;
+
+  div {
+    font-size: 1.4rem;
+  }
+}

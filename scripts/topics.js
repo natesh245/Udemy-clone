@@ -118,6 +118,10 @@ class TopicCarousel extends HTMLElement {
       "Security Certifications",
     ];
 
+    if (this.hasAttribute("topics")) {
+      topics = JSON.parse(this.getAttribute("topics"));
+    }
+
     topics.map((topic) => {
       const div = document.createElement("div");
       div.className = "topic-div";

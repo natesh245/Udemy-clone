@@ -1154,4 +1154,119 @@ html {
   margin-bottom: 0;
 }
 
+.footer {
+  margin: 5rem 0 0;
+}
+.footer section {
+  padding: 3rem;
+}
+.footer section:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.575);
+}
+.footer section:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.575);
+}
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1020px) {
+  .footer__top {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+.footer__top--left {
+  display: flex;
+  flex-direction: column;
+}
+.footer__top--left h3 {
+  font-size: 1.9rem;
+  line-height: 4rem;
+}
+.footer__top--left p {
+  font-size: 1.5rem;
+}
+@media (max-width: 1020px) {
+  .footer__top--left p {
+    margin-bottom: 2rem;
+  }
+}
+.footer__top--right {
+  text-decoration: none;
+  color: white;
+  padding: 1.3rem;
+  border-radius: 5px;
+  background-color: #186488;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.footer__middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1164px) {
+  .footer__middle {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+.footer__middle--left h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.footer__middle--left h3 span {
+  color: #186488;
+}
+@media (max-width: 1164px) {
+  .footer__middle--left {
+    margin-bottom: 2rem;
+  }
+}
+.footer__middle--right {
+  display: flex;
+}
+.footer__middle--right img {
+  margin-right: 1.5rem;
+}
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media (max-width: 1050px) {
+  .footer__bottom {
+    flex-direction: column-reverse;
+  }
+}
+.footer__bottom ul {
+  list-style: none;
+}
+.footer__bottom ul li {
+  color: #186488;
+  padding: 1rem 1rem 0;
+  font-size: 1.5rem;
+}
+.footer__bottom div {
+  width: 15em;
+  padding: 1rem 4rem;
+  font-size: 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.568);
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.568);
+  text-align: left;
+}
+
+.copyright-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 5rem;
+}
+.copyright-container div {
+  font-size: 1.4rem;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -126,7 +126,6 @@ class CourseCarousel extends HTMLElement {
     const carousel = shadow.querySelector(".carousel");
 
     courseArray.map((course) => {
-      console.log(course);
       const courseCard = document.createElement("course-card");
       courseCard.setAttribute("imgUrl", `${course.imgageUrl}`);
       courseCard.setAttribute("heading", `${course.heading}`);
