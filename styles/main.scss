@@ -1294,6 +1294,77 @@ html {
   margin-bottom: 0;
 }
 
+.top-picks {
+  padding: 2rem;
+
+  .picks {
+    margin: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    padding: 2rem;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+
+    img {
+      width: 40%;
+      margin-right: 3rem;
+    }
+
+    .top-pick__desc {
+      color: rgb(17, 17, 17);
+      width: 40%;
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2px;
+      }
+
+      p {
+        color: rgb(88, 88, 88);
+        font-size: 1.5rem;
+        margin-bottom: 4px;
+      }
+
+      .creaters {
+        color: gray;
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+        margin-bottom: 4px;
+      }
+
+      .extra {
+        margin-bottom: 4px;
+        color: gray;
+        font-size: 1.3rem;
+        span {
+          color: green;
+          font-size: 1.3rem;
+          strong {
+            font-weight: 700;
+          }
+        }
+      }
+
+      .rating {
+        font-size: 1.5rem;
+        color: rgb(209, 152, 7);
+        font-weight: 700;
+      }
+      position: relative;
+      .price {
+        font-size: 1.6rem;
+        font-weight: 700;
+        position: absolute;
+        bottom: 0rem;
+        strike {
+          color: gray;
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
 .footer {
   margin: 5rem 0 0;
 

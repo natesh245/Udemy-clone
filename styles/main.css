@@ -1154,6 +1154,69 @@ html {
   margin-bottom: 0;
 }
 
+.top-picks {
+  padding: 2rem;
+}
+.top-picks .picks {
+  margin: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.199);
+  padding: 2rem;
+  display: flex;
+  justify-content: start;
+  width: 100%;
+}
+.top-picks .picks img {
+  width: 40%;
+  margin-right: 3rem;
+}
+.top-picks .picks .top-pick__desc {
+  color: #111111;
+  width: 40%;
+  position: relative;
+}
+.top-picks .picks .top-pick__desc h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2px;
+}
+.top-picks .picks .top-pick__desc p {
+  color: #585858;
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+.top-picks .picks .top-pick__desc .creaters {
+  color: gray;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  margin-bottom: 4px;
+}
+.top-picks .picks .top-pick__desc .extra {
+  margin-bottom: 4px;
+  color: gray;
+  font-size: 1.3rem;
+}
+.top-picks .picks .top-pick__desc .extra span {
+  color: green;
+  font-size: 1.3rem;
+}
+.top-picks .picks .top-pick__desc .extra span strong {
+  font-weight: 700;
+}
+.top-picks .picks .top-pick__desc .rating {
+  font-size: 1.5rem;
+  color: #d19807;
+  font-weight: 700;
+}
+.top-picks .picks .top-pick__desc .price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  position: absolute;
+  bottom: 0rem;
+}
+.top-picks .picks .top-pick__desc .price strike {
+  color: gray;
+  padding-left: 1rem;
+}
+
 .footer {
   margin: 5rem 0 0;
 }

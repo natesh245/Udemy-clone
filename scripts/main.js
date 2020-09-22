@@ -727,3 +727,70 @@ RenderCourseCarousel(
   courses1.reverse(),
   document.querySelector(".recommend-container")
 );
+
+//our top picks
+const topPicks = {
+  imageUrl: "https://img-a.udemycdn.com/course/750x422/1436092_2024_4.jpg",
+  title: "React Native the practical guide- 2020 Edition",
+  description:
+    "use React native and your react knowledge to build native ios and android apps",
+  createdBy: "Academeind By Maximillaian Schwarmueller",
+  lastUpdated: "August 2020",
+  TotlaHrs: "32.5 total hours",
+  lectures: "340 lectures",
+  rating: "4.6",
+  price: "Rs 460",
+  sPrice: "Rs 1900",
+};
+function RenderTopPick(
+  imgurl,
+  title,
+  desc,
+  creaters,
+  hrs,
+  noLec,
+  upddate,
+  rating,
+  price,
+  strikedPrice,
+  contRef
+) {
+  const div = document.createElement("div");
+  div.className = "picks";
+  div.innerHTML = `
+                  <img src=${imgurl} alt=${title}/> 
+                  <div class="top-pick__desc">
+                    <h2>${title}</h2>
+                    <p>${desc}</p>
+                    <div class="creaters">
+                      ${creaters}
+                    </div>
+                    <div class ="extra">
+                      <span>updated <strong> ${upddate}</strong></span> ${hrs} .${noLec} .All levels
+                    </div>
+                    <div class="rating">
+                      ${rating}
+                    </div>
+                    <div class="price">
+                      ${price} <strike>${strikedPrice}</strike>
+                    </div>
+
+                  </div>
+  
+  `;
+  contRef.insertAdjacentElement("beforeend", div);
+}
+
+RenderTopPick(
+  topPicks.imageUrl,
+  topPicks.title,
+  topPicks.description,
+  topPicks.createdBy,
+  topPicks.TotlaHrs,
+  topPicks.lectures,
+  topPicks.lastUpdated,
+  topPicks.rating,
+  topPicks.price,
+  topPicks.sPrice,
+  document.querySelector(".top-picks")
+);
